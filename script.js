@@ -11,11 +11,14 @@ var MainController = function($scope, $http){
         $scope.error = "Could not fetch the user";
     };
 
-    $http.get("https:/api.github.com/users/komaschuk")
+    $scope.search = function(username){
+        $http.get("https:/api.github.com/users/" + username)
         .then(onUserComplete, onError);
-
-    $scope.message = "Hello, Angular!";
+    };
     
+
+    $scope.message = "GitHub Viewer";
+    $scope.username = "angular";
 };
 
 appModule.controller("MainController", ["$scope", "$http", MainController]);
