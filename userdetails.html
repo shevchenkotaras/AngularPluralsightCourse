@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html ng-app="githubViewer">
-
-  <head>
-    <link rel="stylesheet" href="style.css">    
-    <script src="angular.min.js"></script>
-    <script src="script.js"></script>
-  </head>
-
-  <body ng-controller="MainController">
-    <h1>{{message}}</h1>
-    <div>{{error}}</div>
-    {{username}}
-    <form name="searchUser" ng-submit="search(username)">
-      <input type="search" required placeholder="User name to find" ng-model="username">
-      <input type="submit" value="Search">
-    </form>
     
-    <div ng-show="user">
+    <div>
       <h2>{{user.name}}</h2>
       <img ng-src="{{user.avatar_url}}" title="{{user.name}}">
       Order:
@@ -27,7 +10,7 @@
     </select>
     </div>    
 
-    <table ng-show="user">
+    <table>
       <head>
         <tr>
           <th>Name</th>
@@ -43,6 +26,3 @@
         </tr>
       </tbody>
     </table>
-  </body>
-
-</html>
